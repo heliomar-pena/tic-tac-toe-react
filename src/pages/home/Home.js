@@ -10,14 +10,16 @@ const App = () => {
   const [xIsNext, setXIsNext] = useState(true); 
   const [stepNumber, setStepNumber] = useState(0); 
   const [reverseMoves, setReverseMoves] = useState(false);
+  const [lineWinner, setLineWinner] = useState([]);
 
   const currentPlayer = xIsNext ? 'X' : 'O';
 
-  let currentHistory = history[stepNumber];
+  const currentHistory = history[stepNumber];
 
   const jumpTo = (step) => {
     setStepNumber(step);
     setXIsNext((step % 2) === 0);
+    setLineWinner(calculateWinner(history[step].squares));
   }
 
   const calculateWinner = (squares) => {
@@ -31,19 +33,20 @@ const App = () => {
       [0, 4, 8],
       [2, 4, 6],
     ];
+
     for (let i = 0; i < lines.length; i++) {
       const [a, b, c] = lines[i];
       if (squares[a] && squares[a] === squares[b] && squares[a] === squares[c]) {
-        return squares[a];
+        return lines[i];
       }
     }
-  
-    return null;
+
+    return [];
   }
 
-
   const handleClick = (i) => {
-    if (calculateWinner(currentHistory.squares) || currentHistory.squares[i]) return;
+    if (calculateWinner(currentHistory.squares).length || currentHistory.squares[i]) return;
+    
     const newSquares = currentHistory.squares.slice();
     newSquares[i] = currentPlayer;
     
@@ -62,6 +65,7 @@ const App = () => {
     }]));
     setStepNumber(newHistory.length)
     setXIsNext(!xIsNext);
+    setLineWinner(calculateWinner(newSquares));
   }
 
   const winner = calculateWinner(currentHistory.squares);
@@ -72,7 +76,7 @@ const App = () => {
     <div className="App">
       <div className="game">
         <div className="game-board">
-          <Board onClick={handleClick} squares={currentHistory.squares} />
+          <Board onClick={handleClick} squares={currentHistory.squares} lineWinner={lineWinner} />
         </div>
         <div className="game-info">
           <div>{ status }</div>
