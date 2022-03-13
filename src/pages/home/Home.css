@@ -48,3 +48,17 @@ ol, ul {
 .game-info {
   margin-left: 20px;
 }
+
+.bolder {
+  font-weight: bolder;
+}
+
+.flex-reverse {
+  display: flex;
+  flex-direction: column-reverse;
+}
+
+.box-winner {
+  background-color: steelblue;
+  color: white;
+}
