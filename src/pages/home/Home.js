@@ -46,11 +46,13 @@ const App = () => {
     if (calculateWinner(currentHistory.squares) || currentHistory.squares[i]) return;
     const newSquares = currentHistory.squares.slice();
     newSquares[i] = currentPlayer;
+    
+    const newHistory = history.slice(0, stepNumber + 1);
 
     const row = Math.ceil((i + 1) / 3);
     const col = (i + 1) - ((row - 1) * 3);
-    
-    setHistory(history.concat([{
+
+    setHistory(newHistory.concat([{
       squares: newSquares,
       move: {
         row,
@@ -58,7 +60,7 @@ const App = () => {
         currentPlayer
       },
     }]));
-    setStepNumber(history.length)
+    setStepNumber(newHistory.length)
     setXIsNext(!xIsNext);
   }
 
