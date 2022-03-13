@@ -70,7 +70,15 @@ const App = () => {
 
   const winner = calculateWinner(currentHistory.squares);
 
-  const status = winner ? `Winner: ${xIsNext ? 'O' : 'X'}` : `Next player: ${currentPlayer}`;
+  let status;
+
+  if (winner.length) {
+    status = `Winner: ${xIsNext ? 'O' : 'X'}`;
+  } else if (stepNumber === 9) {
+    status = `Draw game`
+  } else {
+    status = `Next player: ${currentPlayer}`
+  }
 
   return (
     <div className="App">
