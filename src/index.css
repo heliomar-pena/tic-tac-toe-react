@@ -1,3 +1,12 @@
 .bolder {
     font-weight: bolder;
 }
+
+.flex-reverse {
+    display: flex;
+    flex-direction: column-reverse;
+}
+
+.box-winner {
+    background-color: green;
+}

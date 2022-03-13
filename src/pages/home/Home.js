@@ -9,6 +9,7 @@ const App = () => {
   }]);
   const [xIsNext, setXIsNext] = useState(true); 
   const [stepNumber, setStepNumber] = useState(0); 
+  const [reverseMoves, setReverseMoves] = useState(false);
 
   const currentPlayer = xIsNext ? 'X' : 'O';
 
@@ -69,13 +70,18 @@ const App = () => {
     <div className="App">
       <div className="game">
         <div className="game-board">
-          <Board onClick={handleClick} squares={currentHistory.squares}/>
+          <Board onClick={handleClick} squares={currentHistory.squares} />
         </div>
         <div className="game-info">
           <div>{ status }</div>
-          <ol>
+          <ol className={reverseMoves ? 'flex-reverse' : undefined}>
             <Moves selected={stepNumber} history={history} onClick={jumpTo}/>
           </ol>
+          <div>
+            <button onClick={() => setReverseMoves(!reverseMoves)} type="button">
+              Reverse moves
+            </button>
+          </div>
         </div>
       </div>
     </div>
