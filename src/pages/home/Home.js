@@ -1,9 +1,7 @@
-import './Home.css';
-import Board from '../../components/Board';
-import Moves from '../../components/Moves';
+import HomeLayout from './Home.layout';
 import { useState } from 'react';
 
-const App = () => {
+const Home = () => {
   const [history, setHistory] = useState([{
     squares: Array(9).fill(null)
   }]);
@@ -81,25 +79,18 @@ const App = () => {
   }
 
   return (
-    <div className="App">
-      <div className="game">
-        <div className="game-board">
-          <Board onClick={handleClick} squares={currentHistory.squares} lineWinner={lineWinner} />
-        </div>
-        <div className="game-info">
-          <div>{ status }</div>
-          <ol className={reverseMoves ? 'flex-reverse' : undefined}>
-            <Moves selected={stepNumber} history={history} onClick={jumpTo}/>
-          </ol>
-          <div>
-            <button onClick={() => setReverseMoves(!reverseMoves)} type="button">
-              Reverse moves
-            </button>
-          </div>
-        </div>
-      </div>
-    </div>
+    <HomeLayout 
+        handleClick={handleClick} 
+        currentHistory={currentHistory}
+        lineWinner={lineWinner} 
+        status={status} 
+        reverseMoves={reverseMoves} 
+        stepNumber={stepNumber} 
+        history={history} 
+        jumpTo={jumpTo} 
+        setReverseMoves={setReverseMoves}
+    />
   );
 }
 
-export default App;
+export default Home;
