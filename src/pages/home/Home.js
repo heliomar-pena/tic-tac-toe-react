@@ -1,5 +1,6 @@
 import HomeLayout from './Home.layout';
 import { useState } from 'react';
+import { calculateWinner } from '../../utils/game';
 
 const Home = () => {
   const [history, setHistory] = useState([{
@@ -8,7 +9,7 @@ const Home = () => {
   const [xIsNext, setXIsNext] = useState(true); 
   const [stepNumber, setStepNumber] = useState(0); 
   const [reverseMoves, setReverseMoves] = useState(false);
-  const [lineWinner, setLineWinner] = useState([]);
+  const [lineWinner, setLineWinner] = useState(calculateWinner(history[stepNumber].squares));
 
   const currentPlayer = xIsNext ? 'X' : 'O';
 
