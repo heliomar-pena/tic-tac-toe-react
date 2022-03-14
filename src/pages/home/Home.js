@@ -1,14 +1,18 @@
 import HomeLayout from './Home.layout';
 import { useState } from 'react';
+import { calculateWinner } from '../../utils/game';
 
 const Home = () => {
-  const [history, setHistory] = useState([{
+  const storagedHistory = JSON.parse(localStorage.getItem('history'));
+
+  const [history, setHistory] = useState(storagedHistory || [{
     squares: Array(9).fill(null)
   }]);
+
   const [xIsNext, setXIsNext] = useState(true); 
-  const [stepNumber, setStepNumber] = useState(0); 
+  const [stepNumber, setStepNumber] = useState(history.length - 1);
   const [reverseMoves, setReverseMoves] = useState(false);
-  const [lineWinner, setLineWinner] = useState([]);
+  const [lineWinner, setLineWinner] = useState(calculateWinner(history[stepNumber].squares));
 
   const currentPlayer = xIsNext ? 'X' : 'O';
 
@@ -20,50 +24,29 @@ const Home = () => {
     setLineWinner(calculateWinner(history[step].squares));
   }
 
-  const calculateWinner = (squares) => {
-    const lines = [
-      [0, 1, 2],
-      [3, 4, 5],
-      [6, 7, 8],
-      [0, 3, 6],
-      [1, 4, 7],
-      [2, 5, 8],
-      [0, 4, 8],
-      [2, 4, 6],
-    ];
-
-    for (let i = 0; i < lines.length; i++) {
-      const [a, b, c] = lines[i];
-      if (squares[a] && squares[a] === squares[b] && squares[a] === squares[c]) {
-        return lines[i];
-      }
-    }
-
-    return [];
-  }
-
   const handleClick = (i) => {
     if (calculateWinner(currentHistory.squares).length || currentHistory.squares[i]) return;
-    
+
     const newSquares = currentHistory.squares.slice();
     newSquares[i] = currentPlayer;
     
-    const newHistory = history.slice(0, stepNumber + 1);
-
     const row = Math.ceil((i + 1) / 3);
     const col = (i + 1) - ((row - 1) * 3);
 
-    setHistory(newHistory.concat([{
+    const newHistory = history.slice(0, stepNumber + 1).concat([{
       squares: newSquares,
       move: {
         row,
         col,
         currentPlayer
       },
-    }]));
-    setStepNumber(newHistory.length)
+    }]);
+
+    setHistory(newHistory);
+    setStepNumber(newHistory.length - 1)
     setXIsNext(!xIsNext);
     setLineWinner(calculateWinner(newSquares));
+    localStorage.setItem('history', JSON.stringify(newHistory));
   }
 
   const winner = calculateWinner(currentHistory.squares);
