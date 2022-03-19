@@ -11,6 +11,7 @@ I have developed the Tic Tac Toe of [React tutorial](https://es.reactjs.org/tuto
 - Add a toggle button that lets you sort the moves in either ascending or descending order.
 - When someone wins, highlight the three squares that caused the win.
 - When no one wins, display a message about the result being a draw.
+- Game is saving the game progress when you close the window
 
 # Getting Started with Create React App
 
