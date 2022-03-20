@@ -9,8 +9,8 @@ const Home = () => {
     squares: Array(9).fill(null)
   }]);
 
-  const [xIsNext, setXIsNext] = useState(true); 
   const [stepNumber, setStepNumber] = useState(history.length - 1);
+  const [xIsNext, setXIsNext] = useState((stepNumber % 2) === 0); 
   const [reverseMoves, setReverseMoves] = useState(false);
   const [lineWinner, setLineWinner] = useState(calculateWinner(history[stepNumber].squares));
 
@@ -54,11 +54,11 @@ const Home = () => {
   let status;
 
   if (winner.length) {
-    status = `Winner: ${xIsNext ? 'O' : 'X'}`;
+    status = `Winner: ${xIsNext ? 'Player 2' : 'Player 1'}`;
   } else if (stepNumber === 9) {
     status = `Draw game`
   } else {
-    status = `Next player: ${currentPlayer}`
+    status = `Current player: ${xIsNext ? 'Player 1' : 'Player 2'}`
   }
 
   return (
