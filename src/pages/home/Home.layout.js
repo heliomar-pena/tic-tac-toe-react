@@ -1,8 +1,9 @@
 import './Home.css';
 import Board from '../../components/Board';
 import Moves from '../../components/Moves';
+import Modal from '../../components/Modal';
 
-const HomeLayout = ({ handleClick, currentHistory, lineWinner, status, reverseMoves, stepNumber, history, jumpTo, setReverseMoves }) => {
+const HomeLayout = ({ handleClick, currentHistory, lineWinner, status, reverseMoves, stepNumber, history, jumpTo, setReverseMoves, isModalOpen, setIsModalOpen }) => {
   return (
     <div className="game">
       <div className="game-board">
@@ -19,6 +20,7 @@ const HomeLayout = ({ handleClick, currentHistory, lineWinner, status, reverseMo
           </button>
         </div>
       </div>
+      {true && <Modal timeout={1200} setIsOpen={setIsModalOpen} isOpen={isModalOpen}><span className="status__winner">🥳 { status } 🥳</span></Modal>}
     </div>
   );
 }
