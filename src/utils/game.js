@@ -19,3 +19,16 @@ export const calculateWinner = (squares) => {
 
   return [];
 }
+
+export const hide = async (ms, setAnimation, setIsOpen) => {
+  // Sets a temporary class
+  setAnimation('close')
+
+  // Waits for n milliseconds 
+  await new Promise(resolve => setTimeout(resolve, ms))
+
+  setAnimation('');
+
+  // Hides the element
+  setIsOpen(false);
+}

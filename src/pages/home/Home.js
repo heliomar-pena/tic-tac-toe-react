@@ -9,19 +9,23 @@ const Home = () => {
     squares: Array(9).fill(null)
   }]);
 
-  const [xIsNext, setXIsNext] = useState(true); 
   const [stepNumber, setStepNumber] = useState(history.length - 1);
+  const [xIsNext, setXIsNext] = useState((stepNumber % 2) === 0); 
   const [reverseMoves, setReverseMoves] = useState(false);
   const [lineWinner, setLineWinner] = useState(calculateWinner(history[stepNumber].squares));
+  const [isModalOpen, setIsModalOpen] = useState(!!lineWinner.length);
 
   const currentPlayer = xIsNext ? 'X' : 'O';
 
   const currentHistory = history[stepNumber];
 
   const jumpTo = (step) => {
+    const newLineWinner = calculateWinner(history[step].squares);
+
     setStepNumber(step);
     setXIsNext((step % 2) === 0);
-    setLineWinner(calculateWinner(history[step].squares));
+    setLineWinner(newLineWinner);
+    setIsModalOpen(!!newLineWinner.length);
   }
 
   const handleClick = (i) => {
@@ -42,10 +46,13 @@ const Home = () => {
       },
     }]);
 
+    const newLineWinner = calculateWinner(newSquares);
+
     setHistory(newHistory);
     setStepNumber(newHistory.length - 1)
     setXIsNext(!xIsNext);
-    setLineWinner(calculateWinner(newSquares));
+    setLineWinner(newLineWinner);
+    setIsModalOpen(!!newLineWinner.length);
     localStorage.setItem('history', JSON.stringify(newHistory));
   }
 
@@ -54,11 +61,11 @@ const Home = () => {
   let status;
 
   if (winner.length) {
-    status = `Winner: ${xIsNext ? 'O' : 'X'}`;
+    status = `Winner: ${xIsNext ? 'Player 2' : 'Player 1'}`;
   } else if (stepNumber === 9) {
     status = `Draw game`
   } else {
-    status = `Next player: ${currentPlayer}`
+    status = `Current player: ${xIsNext ? 'Player 1' : 'Player 2'}`
   }
 
   return (
@@ -72,6 +79,8 @@ const Home = () => {
         history={history} 
         jumpTo={jumpTo} 
         setReverseMoves={setReverseMoves}
+        isModalOpen={isModalOpen}
+        setIsModalOpen={setIsModalOpen}
     />
   );
 }
