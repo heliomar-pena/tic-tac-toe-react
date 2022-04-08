@@ -1,6 +1,6 @@
-import Square from "./Square";
+import Square from "../Square";
 
-const Board = ({ squares, lineWinner, onClick }) => {
+const Board = ({ squares = Array(9).fill(null), lineWinner = [], onClick }) => {
     return (
         <div className="board">
             {squares.map((item, index) => (
