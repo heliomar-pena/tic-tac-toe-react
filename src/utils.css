@@ -55,3 +55,43 @@
     letter-spacing: var(--typography-text-desk-player-paragraph-spacing);
     text-transform: var(--typography-text-desk-player-text-case);
 }
+
+.bg-orange-200 {
+    background: var(--color-orange-200);
+}
+
+.text-orange-200 {
+    color: var(--color-orange-200);
+}
+
+.bg-orange-500 {
+    background: var(--color-orange-500);
+}
+
+.text-orange-500 {
+    color: var(--color-orange-500);
+}
+
+.bg-blue-400 {
+    background: var(--color-blue-400);
+}
+
+.text-blue-400 {
+    color: var(--color-blue-400);
+}
+
+.bg-blue-100 {
+    background: var(--color-blue-100);
+}
+
+.text-blue-100 {
+    color: var(--color-blue-100);
+}
+
+.bg-blue-500 {
+    background: var(--color-blue-500);
+}
+
+.text-blue-500 {
+    color: var(--color-blue-500);
+}
