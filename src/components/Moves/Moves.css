@@ -1,0 +1,43 @@
+.game-info {
+    margin-right: 50px;
+}
+
+.game-info__header {
+    cursor: pointer;
+}
+
+.game-info__title {
+    margin-right: 9px;
+}
+
+.game-info__arrow {
+    transition: transform .3s ease-in-out;
+}
+
+.reverse--active .game-info__arrowDown {
+    transform: rotate(-180deg);
+}
+
+.moves {
+    list-style-type: none;
+    padding-left: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    border: 1px solid var(--color-blue-400);
+    padding: 5px 0 20px 5px;
+    border-radius: 6px;   
+}
+
+.flex-reverse {
+    display: flex;
+    flex-direction: column-reverse;
+}
+
+.moves__button button {
+    background: transparent;
+    border: 0;
+    color: var(--color-blue-500);
+    cursor: pointer;
+
+}

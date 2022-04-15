@@ -1,0 +1,21 @@
+.board {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+}
+
+.board .square:first-of-type {
+    border-radius: 6px 0 0 0;
+}
+
+.board .square:last-of-type {
+    border-radius: 0 0 6px 0;
+}
+
+.board .square:nth-child(3) {
+    border-radius: 0 6px 0 0;
+}
+
+.board .square:nth-child(7) {
+    border-radius: 0 0 0 6px;
+}

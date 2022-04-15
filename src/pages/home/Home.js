@@ -81,6 +81,7 @@ const Home = () => {
         setReverseMoves={setReverseMoves}
         isModalOpen={isModalOpen}
         setIsModalOpen={setIsModalOpen}
+        currentPlayer={currentPlayer}
     />
   );
 }
