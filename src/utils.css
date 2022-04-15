@@ -1,59 +1,59 @@
 /* fonts design tokens */
 
 .text-xxl {
-    font-size: var(--typography-text-xxl-font-size);
-    text-decoration: var(--typography-text-xxl-text-decoration);
-    font-family: var(--typography-text-xxl-font-family);
-    font-weight: var(--typography-text-xxl-font-weight);
-    font-style: var(--typography-text-xxl-font-style);
-    font-stretch: var(--typography-text-xxl-font-stretch);
-    letter-spacing: var(--typography-text-xxl-letter-spacing);
-    line-height: var(--typography-text-xxl-line-height);
-    text-indent: var(--typography-text-xxl-paragraph-indent);
-    letter-spacing: var(--typography-text-xxl-paragraph-spacing);
-    text-transform: var(--typography-text-xxl-text-case);
+    font-size: var(--typography-xxl-font-size);
+    text-decoration: var(--typography-xxl-text-decoration);
+    font-family: var(--typography-xxl-font-family);
+    font-weight: var(--typography-xxl-font-weight);
+    font-style: var(--typography-xxl-font-style);
+    font-stretch: var(--typography-xxl-font-stretch);
+    letter-spacing: var(--typography-xxl-letter-spacing);
+    line-height: var(--typography-xxl-line-height);
+    text-indent: var(--typography-xxl-paragraph-indent);
+    letter-spacing: var(--typography-xxl-paragraph-spacing);
+    text-transform: var(--typography-xxl-text-case);
 }
 
 .text-lg {
-    font-size: var(--typography-text-lg-font-size);
-    text-decoration: var(--typography-text-lg-text-decoration);
-    font-family: var(--typography-text-lg-font-family);
-    font-weight: var(--typography-text-lg-font-weight);
-    font-style: var(--typography-text-lg-font-style);
-    font-stretch: var(--typography-text-lg-font-stretch);
-    letter-spacing: var(--typography-text-lg-letter-spacing);
-    line-height: var(--typography-text-lg-line-height);
-    text-indent: var(--typography-text-lg-paragraph-indent);
-    letter-spacing: var(--typography-text-lg-paragraph-spacing);
-    text-transform: var(--typography-text-lg-text-case);
+    font-size: var(--typography-lg-font-size);
+    text-decoration: var(--typography-lg-text-decoration);
+    font-family: var(--typography-lg-font-family);
+    font-weight: var(--typography-lg-font-weight);
+    font-style: var(--typography-lg-font-style);
+    font-stretch: var(--typography-lg-font-stretch);
+    letter-spacing: var(--typography-lg-letter-spacing);
+    line-height: var(--typography-lg-line-height);
+    text-indent: var(--typography-lg-paragraph-indent);
+    letter-spacing: var(--typography-lg-paragraph-spacing);
+    text-transform: var(--typography-lg-text-case);
 }
 
 .text-base {
-    font-size: var(--typography-text-base-font-size);
-    text-decoration: var(--typography-text-base-text-decoration);
-    font-family: var(--typography-text-base-font-family);
-    font-weight: var(--typography-text-base-font-weight);
-    font-style: var(--typography-text-base-font-style);
-    font-stretch: var(--typography-text-base-font-stretch);
-    letter-spacing: var(--typography-text-base-letter-spacing);
-    line-height: var(--typography-text-base-line-height);
-    text-indent: var(--typography-text-base-paragraph-indent);
-    letter-spacing: var(--typography-text-base-paragraph-spacing);
-    text-transform: var(--typography-text-base-text-case);
+    font-size: var(--typography-base-font-size);
+    text-decoration: var(--typography-base-text-decoration);
+    font-family: var(--typography-base-font-family);
+    font-weight: var(--typography-base-font-weight);
+    font-style: var(--typography-base-font-style);
+    font-stretch: var(--typography-base-font-stretch);
+    letter-spacing: var(--typography-base-letter-spacing);
+    line-height: var(--typography-base-line-height);
+    text-indent: var(--typography-base-paragraph-indent);
+    letter-spacing: var(--typography-base-paragraph-spacing);
+    text-transform: var(--typography-base-text-case);
 }
 
 .text-desk-player {
-    font-size: var(--typography-text-desk-player-font-size);
-    text-decoration: var(--typography-text-desk-player-text-decoration);
-    font-family: var(--typography-text-desk-player-font-family);
-    font-weight: var(--typography-text-desk-player-font-weight);
-    font-style: var(--typography-text-desk-player-font-style);
-    font-stretch: var(--typography-text-desk-player-font-stretch);
-    letter-spacing: var(--typography-text-desk-player-letter-spacing);
-    line-height: var(--typography-text-desk-player-line-height);
-    text-indent: var(--typography-text-desk-player-paragraph-indent);
-    letter-spacing: var(--typography-text-desk-player-paragraph-spacing);
-    text-transform: var(--typography-text-desk-player-text-case);
+    font-size: var(--typography-desk-player-font-size);
+    text-decoration: var(--typography-desk-player-text-decoration);
+    font-family: var(--typography-desk-player-font-family);
+    font-weight: var(--typography-desk-player-font-weight);
+    font-style: var(--typography-desk-player-font-style);
+    font-stretch: var(--typography-desk-player-font-stretch);
+    letter-spacing: var(--typography-desk-player-letter-spacing);
+    line-height: var(--typography-desk-player-line-height);
+    text-indent: var(--typography-desk-player-paragraph-indent);
+    letter-spacing: var(--typography-desk-player-paragraph-spacing);
+    text-transform: var(--typography-desk-player-text-case);
 }
 
 .bg-orange-200 {
