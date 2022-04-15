@@ -22,7 +22,7 @@ describe('Home view', () => {
     fireEvent.click(buttons[5]);
     fireEvent.click(buttons[2]);
 
-    view.getByText('Winner: Player 1');
+    view.getByText(/Winner: Player 1/ig);
   });
 
   test('Home game history is empty when game start', () => {

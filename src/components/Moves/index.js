@@ -1,5 +1,5 @@
 import arrowDown from '../../assets/icons/arrowDown.svg';
-import MovesItem from '../../components/Moves/MoveItem';
+import MovesItem from './MovesItem';
 import './Moves.css';
 
 const Moves = ({setReverseMoves, reverseMoves, jumpTo, history, stepNumber}) => (
