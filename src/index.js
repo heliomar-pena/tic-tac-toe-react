@@ -1,6 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
+import 'tic-tac-toe-design-tokens/build/css/_variables.css'
+import './utils.css'
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 
