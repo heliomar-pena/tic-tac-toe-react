@@ -11,7 +11,7 @@ const Moves = ({setReverseMoves, reverseMoves, jumpTo, history, stepNumber}) => 
         <span className="game-info__title">
           History
         </span>
-        <img className="game-info__arrow game-info__arrowDown" src={arrowDown} />
+        <img className="game-info__arrow game-info__arrowDown" src={arrowDown} alt="arrowDown" />
       </div>
       <ol className={`${reverseMoves ? 'flex-reverse' : undefined} moves`}>
         <MovesItem selected={stepNumber} history={history} onClick={jumpTo}/>
