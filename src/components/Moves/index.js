@@ -1,16 +1,22 @@
-const Moves = ({history = [{squares: Array(9).fill(null)}], selected = 0, onClick = () => {}}) => history.map((currentHistory, index) => {
-    const { move } = currentHistory;
-    const desc = index ? 
-        `${move.currentPlayer} play on column ${move.col}, row ${move.row}` :
-        `Go to game start`;
+import arrowDown from '../../assets/icons/arrowDown.svg';
+import MovesItem from './MovesItem';
+import './Moves.css';
 
-    const className = selected === index ? 'bolder' : undefined;
-
-    return (
-        <li key={index} className={className}>
-            <button onClick={() => onClick(index)}>{desc}</button>
-        </li>
-    )
-})
+const Moves = ({setReverseMoves, reverseMoves, jumpTo, history, stepNumber}) => (
+    <div className="game-info">
+      <div 
+        onClick={() => setReverseMoves(!reverseMoves)}
+        className={`game-info__header ${reverseMoves ? 'reverse--active' : ""}`}
+      >
+        <span className="game-info__title">
+          History
+        </span>
+        <img className="game-info__arrow game-info__arrowDown" src={arrowDown} alt="arrowDown" />
+      </div>
+      <ol className={`${reverseMoves ? 'flex-reverse' : undefined} moves`}>
+        <MovesItem selected={stepNumber} history={history} onClick={jumpTo}/>
+      </ol>
+    </div>
+)
 
 export default Moves;

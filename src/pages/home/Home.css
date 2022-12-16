@@ -4,3 +4,43 @@
   display: block;
   user-select: none;
 }
+
+.game {
+  display: grid;
+  min-height: 100vh;
+  justify-content: center;
+  align-items: center;
+  grid-template-columns: 0.3fr 0.7fr 0.4fr;
+  
+}
+
+.game-board {
+  width: 60%;
+  margin: 0 auto;
+}
+
+.status {
+  margin-bottom: 31px;
+  color: var(--color-blue-400);
+  font-size: var(--typography-xxl-font-size);
+  font-family: var(--typography-xxl-font-family);
+}
+
+.status__playerOne {
+  margin-right: 30px;
+}
+
+.status--inactive {
+  stroke-width: 1px;
+  color: var(--color-blue-400);
+  -webkit-text-fill-color: var(--color-blue-100);
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: var(--color-blue-400);
+}
+
+.status--active {
+  stroke-width: 1px;
+  /* if user browser is not compatible with webkit, then active will be more lighted */
+  color: var(--color-blue-500);
+  -webkit-text-fill-color: var(--color-blue-400);
+}
